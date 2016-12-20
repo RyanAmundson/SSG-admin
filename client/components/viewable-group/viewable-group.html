@@ -1,0 +1,12 @@
+<ion-view view-title="Viewable Group">
+     <ion-content>
+
+          <ion-list>
+               <ion-item ng-repeat="view in viewGroup.views" class="view-group-image" ng-click='clicked(view.name)' style="background-image:url('{{view.location}}')" ui.sref="app.viewer({viewgroup:viewGroup.id,view:'view.id'})">
+                         <h1>{{view.name}}</h1>
+               </ion-item>
+          </ion-list>
+
+
+     </ion-content>
+</ion-view>

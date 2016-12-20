@@ -1,0 +1,17 @@
+<ion-view view-title="Login" align-title="left">
+    <ion-content style="background: url(assets/img/milkyway.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h1></h1>
+            </div>
+        </div>
+        <div class="list">
+            <ion-md-input placeholder="Username" highlight-color="balanced" type="text" ng-model="userInfo.email"></ion-md-input>
+            <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="userInfo.password"></ion-md-input>
+        </div>
+        <div class="padding">
+            <button ng-click="logInWithFirebase()" class="button button-full button-assertive ink">Login</button>
+        </div>
+    </ion-content>
+</ion-view>

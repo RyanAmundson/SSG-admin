@@ -1,0 +1,203 @@
+
+<div ng-controller="ThreeDPhotoCtrl"  class="main-section">
+
+<!-- Switch entity based on category -->
+<a-scene class="volvPlayer" >
+<!-- Asset Timeout 30 sec -->
+<a-assets timeout="10000">
+<!-- Load assets dynamically -->
+    <img id="my-image" src="/3dModels/r_ex.JPG">
+		<a-asset-item id="arrow1" src="/3dModels/Arrow1.obj"></a-asset-item>
+    <a-asset-item id="arrow2" src="/3dModels/Arrow2.obj"></a-asset-item>
+    <a-asset-item id="arrow3" src="/3dModels/Arrow3.obj"></a-asset-item>
+    <a-asset-item id="arrow4" src="/3dModels/Arrow4.obj"></a-asset-item>
+ 		<a-mixin id="arrow1-hovered" material="color: magenta"></a-mixin>
+    <!-- <video crossorigin id="portal2" webkit-playsinline autoplay loop="true" src="/3dModels/portal_blue.mov"> -->
+    <img id="portal" src="/3dModels/Jump.jpg"></img>
+    <img id="room1" src="/3dModels/Image1_x.JPG"></img>
+    <img id="room2" src="/3dModels/r_ex.JPG"></img>
+    <img id="room3" src="/3dModels/r2_ex.JPG"></img>
+    <img id="room4" src="/3dModels/Jump.jpg"></img>
+
+    <img id="sign1" src="/3dModels/sign_s1.jpg"></img>
+    <img id="sign2" src="/3dModels/sign_s2.jpg"></img>
+    <img id="sign3" src="/3dModels/sign_s3.jpg"></img>
+    <img id="sign4" src="/3dModels/sign_s4.jpg"></img>
+
+    <img id="portal1" src="/3dModels/portal_orange_1.png"></img>
+    <img id="portal2" src="/3dModels/portal_orange_2.png"></img>
+    <img id="portal3" src="/3dModels/portal_orange_3.png"></img>
+
+    <img id="portal4" src="/3dModels/port_blue1.png"></img>
+    <img id="portal5" src="/3dModels/port_blue2.png"></img>
+    <img id="portal6" src="/3dModels/port_blue3.png"></img>
+    <!-- <video id="sign" webkit-playsinline autoplay loop="true" src="/3dModels/80ssign.mp4"> -->
+	<a-asset-item id="duro-obj" src="/3dModels/Durotan.obj"></a-asset-item>
+    <a-asset-item id="duro-mtl" src="/3dModels/Durotan.mtl"></a-asset-item>
+
+
+</a-assets>
+
+      	<!-- <a-curvedimage src="#my-image" height="18.0" radius="10.7" theta-length="360" -->
+                 <!-- rotation="0 0 0" scale="10.8 10.8 10.8"></a-curvedimage> -->
+		<a-entity id="cam" position="20 0 0 " rotation="0 45 0">
+		    <a-entity id="camone" wasd-controls camera look-controls>
+		      <a-entity cursor="fuse: true; maxDistance: 30; timeout: 3000"
+		      			position="0 0 -3"
+		                geometry="primitive: ring; radiusOuter: 0.10;
+		                          radiusInner: 0.08;"
+		                material="color:  #4f93ff; shader: flat"
+		                cursor="maxDistance: 30; fuse: true">
+		      <!--   <a-animation begin="click" easing="ease-in" attribute="scale"
+		             fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+		        <a-animation begin="fusing" easing="ease-in" attribute="scale"
+		             fill="forwards" from="1 1 1" to="0.1 0.1 0.1" dur="1500"></a-animation> -->
+		      </a-entity>
+		    </a-entity>
+
+		  </a-entity>
+  		<a-entity obj-model="obj: #duro-obj; mtl: #duro-mtl" scale="12 12 12" position="0 -30 -20" rotation="0 4 0"></a-entity>
+
+		<a-sky src="#room1" rotation="0 0 0" radius="60"></a-sky>
+		<a-sky src="#room2" position="-120 0 0" radius="60" rotation="0 -80 0"></a-sky>
+		<a-sky src="#room3" position="-240 0 0" radius="60" rotation="0 -90 0"></a-sky>
+		<a-sky src="#room4" position="-360 0 0" radius="60" rotation="0 -90 0"></a-sky>
+
+		<a-obj-model id="moveArrow1" src="#arrow1" rotation="0 90 0" position="0 -10 0" opacity="0.5">
+ 		<a-animation begin="hovered" easing="ease-in" attribute="opacity" direction="alternate"
+		             fill="both" from="0.5" to="1" dur="1000" repeat="3"></a-animation>
+ 		<a-animation begin="click" easing="ease-in" attribute="opacity"
+		             fill="both" from="0.5" to="1" dur="200" repeat="3"></a-animation>
+	    <!-- <a-video src="#sign" height="40" width="14" rotation"70 0 0" position="0 6 -14"></a-video> -->
+	    <a-image src="#sign1" height="40" width="14" position="0 4 -14">
+	    </a-image>
+	    <a-image src="#sign2" height="40" width="14" position="0 4 -14" opacity="0">
+	    		<a-animation attribute="opacity" fill="both" from="0" to="1" dur="1000" repeat="infinite"></a-animation>
+
+	    </a-image>
+	    <a-image src="#sign3" begin="3000" height="40" width="14" position="0 4 -14">
+	    	   <a-animation attribute="opacity" fill="both" from="0" to="1" dur="1000" repeat="infinite"></a-animation>
+
+	    </a-image>
+	    <a-image src="#sign4" begin="6000" height="40" width="14" position="0 4 -14">
+	    	   <a-animation attribute="opacity" fill="both" from="0" to="1" dur="1000" repeat="infinite"></a-animation>
+
+	    </a-image>
+
+		</a-obj-model>
+
+		<a-obj-model id="moveArrow2" src="#arrow2" rotation="0 90 0" position="0 -10 0" >
+		<a-animation begin="hovered" easing="ease-in" attribute="opacity" direction="alternate"
+		             fill="both" from="0.5" to="1" dur="1000" repeat="3"></a-animation>
+ 		<a-animation begin="click" easing="ease-in" attribute="opacity"
+		             fill="both" from="0.5" to="1" dur="200" repeat="3"></a-animation>
+		</a-obj-model>
+
+		<a-obj-model id="moveArrow3" src="#arrow3" rotation="0 90 0" position="0 -10 0" >
+		<a-animation begin="hovered" easing="ease-in" attribute="opacity" direction="alternate"
+		             fill="both" from="0.5" to="1" dur="1000" repeat="3"></a-animation>
+ 		<a-animation begin="click" easing="ease-in" attribute="opacity"
+		             fill="both" from="0.5" to="1" dur="200" repeat="3"></a-animation>
+		</a-obj-model>
+
+		<a-obj-model id="moveArrow4" src="#arrow4" rotation="0 90 0" position="20 -10 0" >
+		<a-animation begin="hovered" easing="ease-in" attribute="opacity" direction="alternate"
+		             fill="both" from="0.5" to="1" dur="1000" repeat="3"></a-animation>
+ 		<a-animation begin="click" easing="ease-in" attribute="opacity"
+		             fill="both" from="0.5" to="1" dur="200" repeat="3"></a-animation>
+		</a-obj-model>
+
+	
+        <a-image src="#portal1" height="30" width="30" rotation="0 260 0" position="-250 0 -20">
+	    </a-image>
+	    <a-image src="#portal2" height="30" width="30" rotation="0 260 0" position="-250 0 -20" opacity="0">
+	    		<a-animation attribute="opacity" fill="both" from="0" to="1" dur="300" direction="alternate" repeat="infinite"></a-animation>
+	    </a-image>
+	    <a-image id="portal3Click" src="#portal3" height="30" width="30" rotation="0 260 0" position="-249 0 -20">
+	       	   		<a-animation begin="click" easing="ease-in" attribute="opacity"
+		             fill="both" from="0.5" to="1" dur="200" repeat="3"></a-animation>
+	    	   <a-animation attribute="opacity" fill="both" from="1" to="0" dur="600" direction="alternate" repeat="infinite"></a-animation>
+	 	</a-image>
+
+
+        <a-image src="#portal4" height="15" width="15" rotation="0 260 0" position="-380 2 4">
+	    </a-image>
+	    <a-image src="#portal5" height="15" width="15" rotation="0 260 0" position="-380 2 4" opacity="0">
+	    		<a-animation attribute="opacity" fill="both" from="0" to="1" dur="300" direction="alternate" repeat="infinite"></a-animation>
+	    </a-image>
+	    <a-image id="portal4Click" src="#portal6" height="15" width="15" rotation="0 260 0" position="-379 2 4">
+	       	   		<a-animation begin="click" easing="ease-in" attribute="opacity"
+		             fill="both" from="0.5" to="1" dur="200" repeat="3"></a-animation>
+	    	   <a-animation attribute="opacity" fill="both" from="1" to="0" dur="600" direction="alternate" repeat="infinite"></a-animation>
+	 	</a-image>
+
+	    <!-- <a-video src="#portal2" height="100" width="100" rotation"0 0 0" position="-260 0 0"></a-video> -->
+
+</a-scene>
+
+</div>
+<a href="/"><img class="a-enter-vr-button customExit" src="/3dModels/favicon/Exit.png"></a>
+<script>
+
+
+
+	document.querySelector('#moveArrow1').addEventListener('click', function () {
+		setTimeout(function(){	
+			document.querySelector("#cam").setAttribute("position", "-120 0 0");
+			document.querySelector("#cam").setAttribute("rotation", "0 50 0");
+
+			  console.log('I was clicked!');
+		},800);
+		});
+
+	document.querySelector('#moveArrow2').addEventListener('click', function () {
+		setTimeout(function(){	
+			document.querySelector("#cam").setAttribute("position", "20 0 0");
+			  console.log('I was clicked!');
+		},800);
+		});
+
+	document.querySelector('#moveArrow3').addEventListener('click', function () {
+		setTimeout(function(){	
+			document.querySelector("#cam").setAttribute("position", "-240 0 0");
+
+			  console.log('I was clicked!');
+		},800);
+});
+
+	document.querySelector('#moveArrow4').addEventListener('click', function () {
+		setTimeout(function(){	
+			document.querySelector("#cam").setAttribute("position", "-120 0 0");
+			  console.log('I was clicked!');
+		},800);
+});
+
+	document.querySelector('#portal3Click').addEventListener('click', function () {
+					  console.log('I was clicked!');
+
+		setTimeout(function(){	
+			document.querySelector("#cam").setAttribute("position", "-360 0 0");
+			document.querySelector("#cam").setAttribute("rotation", "0 330 0");
+
+			  console.log('I was clicked!');
+		},800);
+
+});
+
+	document.querySelector('#portal4Click').addEventListener('click', function () {
+					  console.log('I was clicked!');
+
+		setTimeout(function(){	
+			document.querySelector("#cam").setAttribute("position", "20 0 0");
+			document.querySelector("#cam").setAttribute("rotation", "0 45 0");
+
+			  console.log('I was clicked!');
+		},800);
+
+});
+
+
+
+// });
+
+</script>

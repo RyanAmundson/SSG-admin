@@ -1,0 +1,1 @@
+﻿angular.module('app.shared', ['ionic', 'firebase', 'ngResource', 'ng-file-model']);

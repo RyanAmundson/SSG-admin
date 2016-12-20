@@ -1,0 +1,43 @@
+﻿<ion-view view-title="Conversations">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <!--<button class="button button-assertive button-small" ng-click="createConversation(user.uid)">new convo</button>-->
+        <ion-list>
+
+
+
+
+
+            <ion-item  ng-repeat="(key, value) in conversations.conversations " ng-class="{unread: !value.lastmessage.read}">
+                <div class="" ng-click="readLastMessage()" ui-sref="app.conversationsSingle({id:key})">
+                    <div class="row">
+                        <div class="col">
+                            <h2>{{value.creator.username}}, {{value.recipient.username}}</h2>
+                        </div>                    
+                    </div>
+                    <div class="row">
+                        <div class="col item-text-wrap" >
+                            <p>{{value.lastmessage.content}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-offset-75">
+                            <span class="font-10">{{value.lastmessage.timestamp | date : 'mediumTime'}}</span>
+                        </div>
+                    </div>
+                    <ion-option-button class="ion-minus-circled"
+                                       ng-click="deleteConversation(key,value.creator.ID,value.recipient.ID)">
+                    </ion-option-button>
+ 
+                </div>
+            </ion-item>
+
+
+
+
+
+
+
+
+        </ion-list>
+    </ion-content>
+</ion-view>

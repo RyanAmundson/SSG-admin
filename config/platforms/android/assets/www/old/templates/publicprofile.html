@@ -1,0 +1,46 @@
+﻿<ion-view view-title="Profile">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('img/profile-bg.jpg');">
+            <div class="content">
+                <div class="avatar" style="background-image: url({{viewee.photoURL}});"></div>
+                <h3><a class="light">{{viewee.username}}</a></h3>
+                <h4></h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static"  ng-show="isFollowing">
+            <a class="tab-item" ng-click="unfollowUser()">
+                <i class="icon ion-arrow-graph-down-right"></i>Unfollow
+            </a>
+            <a ui-sref="app.friendspublic({id: viewee.uid })" class="tab-item">
+                <i class="icon ion-android-people"></i> Followers
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-images"></i> Photos
+            </a>
+            <a class="tab-item" ng-click="sendThisPersonAMessage()" ui-sref="app.messagesingle({id:newMessageID})">
+                <i class="icon ion-images"></i> Message
+            </a>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static"  ng-hide="isFollowing">
+            <a class="tab-item" ng-click="followUser()">
+                <i class="icon ion-arrow-graph-up-right"></i>Follow this Person
+            </a>
+        </div>
+        <h4 class="content padding double-padding-x">Following</h4>
+        <div class="list animate-fade-slide-in-right">
+            <ion-list>
+                <ion-item ng-repeat="(key, value) in viewee.following" ui-sref="app.publicprofile({id:key})">
+
+                    <div class="list">
+                        <a class="item item-avatar" href="#">
+                            <img src="{{value.photoURL}}" />
+                            <h2>{{value.username}}</h2>
+                            <p>one line description</p>
+                        </a>
+                    </div>
+
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

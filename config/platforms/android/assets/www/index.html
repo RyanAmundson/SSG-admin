@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+    <link href="assets/lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="assets/lib/ion-md-input/css/ion-md-input.min.css" rel="stylesheet">
+    <link href="assets/lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/animate.css" rel="stylesheet">
+
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBu7YU95-YfgwfWJ8t67NCGXPBY0EcqCew",
+        authDomain: "project-6890719673233979667.firebaseapp.com",
+        databaseURL: "https://project-6890719673233979667.firebaseio.com",
+        storageBucket: "",
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+
+    </script>
+    
+    <script src="assets/lib/ionic/js/ionic.bundle.js"></script>
+    <script src="assets/lib/ionic-material/dist/ionic.material.min.js"></script>
+    <script src="assets/lib/ion-md-input/js/ion-md-input.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- // <script src="cordova.js"></script> -->
+    <!-- your app's js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+
+    <script src="app.js"></script>
+    <!--shared-->
+    <script src="shared/shared.module.js"></script>
+    <script src="shared/directives/file-angular.js"></script>
+    <script src="shared/services/AuthKey.js"></script>
+    <script src="shared/services/BackBlaze.js"></script>
+    <script src="shared/services/Messenger.js"></script>
+    <!--login module-->
+    <script src="components/login/login.module.js"></script>
+    <script src="components/login/login.controller.js"></script>
+    <!--profile module-->
+    <script src="components/profile/profile.module.js"></script>
+    <script src="components/profile/private/privateProfile.controller.js"></script>
+    <script src="components/profile/public/publicProfile.controller.js"></script>
+    <!--feed module-->
+    <script src="components/feed/feed.module.js"></script>
+    <script src="components/feed/feed.controller.js"></script>
+    <!--connections module--> 
+    <script src="components/connections/connections.module.js"></script>
+    <script src="components/connections/followers/public/publicFollowers.controller.js"></script>
+    <script src="components/connections/followers/private/privateFollowers.controller.js"></script>
+    <script src="components/connections/following/public/publicFollowing.controller.js"></script>
+    <script src="components/connections/following/private/privateFollowing.controller.js"></script>
+    <!--menu module-->
+    <script src="components/menu/menu.module.js"></script>
+    <script src="components/menu/menu.controller.js"></script>
+    <!--upload module-->
+    <script src="components/upload/upload.module.js"></script>
+    <script src="components/upload/upload.controller.js"></script>
+    <!--messenger module-->
+    <script src="components/messenger/messenger.module.js"></script>
+    <script src="components/messenger/converastionsSingle.controller.js"></script>
+    <script src="components/messenger/conversations.controller.js"></script>
+
+    <!--//-->
+    <!--<script src="assets/js/controllers.js"></script>-->
+    <!--<script src="assets/js/factories.js"></script>-->
+  
+    
+
+
+</head>
+<body ng-app="app">
+    <ion-nav-view></ion-nav-view>
+</body>
+</html>

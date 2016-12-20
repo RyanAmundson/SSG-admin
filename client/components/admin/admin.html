@@ -1,0 +1,76 @@
+<ion-view view-title="Admin">
+     <ion-content ng-class="{expanded:isExpanded}" class="">
+          <br>
+          <div class="container">
+               <div class="row">
+                    <div class="col-100">
+                         <h2>Data</h2>
+                    </div>
+               </div>
+          <div class="row">
+               <div class="card col-25">
+                    <div class="item item-text-wrap">
+                         Issues : {{overview.data.issues}}
+                    </div>
+               </div>
+               <div class="card col-25">
+                    <div class="item item-text-wrap">
+                         Laws and Agreements : {{overview.data.laws}}
+                    </div>
+               </div>
+               <div class="card col-25">
+                    <div class="item item-text-wrap">
+                         Policy Actors : {{overview.data.actors}}
+                    </div>
+               </div>
+          </div>
+     </div>
+<br>
+     <div class="container">
+          <div class="row">
+               <div class="col-100">
+                    <h2>Categories</h2>
+               </div>
+          </div>
+          <div class="row">
+               <div class="card col-10">
+                    <div class="item item-text-wrap">
+                         Water<br>
+                         Laws: {{overview.categories.water.laws}}<br>
+                         Actors: {{overview.categories.water.actors}}
+                    </div>
+               </div>
+               <div class="card col-10">
+                    <div class="item item-text-wrap">
+                         Land <br>
+                         Laws: {{overview.categories.land.laws}}<br>
+                         Actors: {{overview.categories.land.actors}}
+                    </div>
+               </div>
+               <div class="card col-10">
+                    <div class="item item-text-wrap">
+                         Air <br>
+                         Laws: {{overview.categories.air.laws}}<br>
+                         Actors: {{overview.categories.air.actors}}
+                    </div>
+               </div>
+               <div class="card col-10">
+                    <div class="item item-text-wrap">
+                         Conservation <br>
+                         Laws: {{overview.categories.conservation.laws}}<br>
+                         Actors: {{overview.categories.conservation.actors}}
+                    </div>
+               </div>
+               <div class="card col-10">
+                    <div class="item item-text-wrap">
+                         Pollution<br>
+                         Laws: {{overview.categories.pollution.laws}}<br>
+                         Actors: {{overview.categories.pollution.actors}}
+                    </div>
+               </div>
+          </div>
+     </div>
+
+
+     </ion-content>
+</ion-view>

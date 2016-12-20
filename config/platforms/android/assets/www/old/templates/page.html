@@ -1,0 +1,18 @@
+﻿<ion-view view-title="Messages">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <!--<button class="button button-assertive button-small" ng-click="createConversation(user.uid)">new convo</button>-->
+        <ion-list>
+            <ion-item ng-repeat="(key, value) in conversations ">
+                    <div class="card" ui-sref="app.messagesingle({id:key})">
+                        <div class="item item-text-wrap">
+                            <h2>{{value.creator.name}}, {{value.recipient.name}}</h2>
+                            <p>{{value.lastmessage.author}}</p>
+                            <p>{{value.lastmessage.content}}</p>
+                            <i>{{value.lastmessage.timestamp | date : 'mediumTime'}}</i>
+                        </div>                   
+                    </div>
+                <button ng-click="deleteConversation(key,value.creator.ID,value.recipient.ID)">X</button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

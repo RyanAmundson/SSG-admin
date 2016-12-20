@@ -1,0 +1,57 @@
+<ion-view view-title="Gallery">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in" > 
+    <!-- class="animate-fade-slide-in"> -->
+       
+
+<div class="list half">
+        <div class="list" ng-repeat="i in media track by $index">
+
+            <div ui-sref="app.profile" class="card card-gallery item item-text-wrap">
+                <div class="ink dark-bg">
+                    <h2>{{i.creator}}</h2>
+
+                    <img class="full-image" src="https://f001.backblaze.com/file/ensoVerseMediaTest/{{i.fileName}}.{{i.ext}}">
+                    <!-- <video src="https://f001.backblaze.com/file/ensoVerseMediaTest/{{i.fileName}}.{{i.ext}}" > -->
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item stable-bg assertive">
+                        <i class="icon ion-heart"></i>
+                        {{i.likes}}
+                    </a>
+                    <a class="tab-item stable-bg positive-900">
+                        <i class="icon ion-chatbubbles"></i>
+                        {{i.comments.length}}
+                    </a>
+                    <a class="tab-item stable-bg assertive" ng-repeat="tag in i.tags">
+                        <!-- <i class="icon ion-heart"></i> -->
+                        {{tag}}
+                    </a>
+                </div>
+            </div>
+    </div>
+</div>
+
+<div class="list half">
+        <div class="list" ng-repeat="i in mediaOdd">
+
+            <div ui-sref="app.profile" class="card card-gallery item item-text-wrap">
+                <div class="ink dark-bg">
+                    <h2>{{i.creator}}</h2>
+                    <img class="full-image" src="https://f001.backblaze.com/file/ensoVerseMediaTest/{{i.fileName}}.{{i.ext}}">
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item stable-bg assertive">
+                        <i class="icon ion-heart"></i>
+                        4
+                    </a>
+                    <a class="tab-item stable-bg positive-900">
+                        <i class="icon ion-chatbubbles"></i>
+                        2
+                    </a>
+                </div>
+            </div>
+    </div>
+</div>
+
+    </ion-content>
+</ion-view>

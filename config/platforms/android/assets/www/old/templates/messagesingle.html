@@ -1,0 +1,27 @@
+﻿<ion-view view-title="Messages">
+    <ion-content ng-class="{expanded:isExpanded}">
+
+        <ion-list>
+            <ion-item class="item item-text-wrap" ng-repeat="(messageID, value) in messages | orderBy: -timestamp">
+                {{value.author}} {{value.timestamp}}<br />
+                {{value.content}}
+
+
+                <ion-option-button class="button button-assertive"
+                                   ng-click="deleteMessage(conversationID,messageID)">
+                    Delete
+                </ion-option-button>
+            </ion-item>
+            <div id="bottom">Newest...</div>
+        </ion-list>
+
+
+
+    </ion-content>
+    <ion-footer-bar keyboard-attach>
+        <label class="item item-input">
+            <textarea placeholder="Message" ng-model="currentMessage" ng-keypress="($event.which === 13)?sendMessage():0"></textarea>
+        </label>
+            <button class="button button-assertive button-small" ng-click="sendMessage()"></button>
+    </ion-footer-bar>
+</ion-view>

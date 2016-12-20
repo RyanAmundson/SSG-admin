@@ -1,0 +1,20 @@
+<ion-view view-title="Friends">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <!--<div class="content has-header">
+            <div class="list animate-fade-slide-in-right">-->
+                <ion-list>
+                    <ion-item ng-repeat="(key, value) in followers">
+
+                            <a class="item item-avatar" ui-sref="app.publicProfile({id:key})">
+                                <img src="{{value.photoURL}}" />
+                                <h2>{{value.username}}</h2>
+                                <p>one line description</p>
+                            </a>
+
+
+                    </ion-item>
+                </ion-list>
+            <!--</div>
+        </div>-->
+    </ion-content>
+</ion-view>
